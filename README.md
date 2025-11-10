@@ -42,8 +42,15 @@ The following visualizations summarize training progress and performance compari
 
 ![Comparision of DQN Variants](Comparision-of-DQN-Variants.png)
 
-Each subplot shows the training curve for one DQN variant, with raw scores and a rolling average over 50 episodes.  
-We can see that **Standard DQN** and **Double DQN** converge faster and more stably compared to the others.
+Each subplot shows the training curve for one DQN variant, with raw scores and a rolling average over 50 episodes.
+
+Standard DQN reaches moderate performance (~165 average) with occasional fluctuations.
+
+Double DQN performs the best on average (~243), showing high final scores.
+
+No Replay struggles to learn, with very low scores (~40 average).
+
+DQN with Correlated Sampling improves over No Replay (~210 average) but still exhibits variability.
 
 ---
 
@@ -51,11 +58,15 @@ We can see that **Standard DQN** and **Double DQN** converge faster and more sta
 
 ![Rolling Average Comparison](Rolling-Average-Comparision.png)
 
-This figure directly compares all variants on a single plot.
+This figure compares all variants on a single plot:
 
-- The **Standard DQN** (green) shows the most stable convergence.
-- **Double DQN** (blue) slightly underperforms but with reduced variance.
-- **No Replay** and **Correlated Sampling** (red/orange) suffer from instability and slower learning.
+Double DQN (blue) shows the strongest performance and relatively good stability.
+
+DQN with Correlated Sampling (orange) performs decently but is less stable than Double DQN.
+
+Standard DQN (green) achieves moderate performance with occasional fluctuations.
+
+No Replay (red) remains unstable and rarely reaches high scores.
 
 ---
 
